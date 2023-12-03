@@ -1,0 +1,10 @@
+[package]
+name = "aoc"
+version = "0.1.0"
+authors = ["Benjamin André"]
+edition = "2021"
+
+[dependencies]
+regex = "1.10.2"
+statrs = "0.16.0"
+rand="0.8"
