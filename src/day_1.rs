@@ -33,7 +33,7 @@ impl Day for AoC2023<1, &str> {
     }
 
     fn part_two(&self) -> Option<String> {
-        let mut converted = self.input.to_string();
+        let converted = self.input.to_string();
         let result = converted
             .lines()
             .map(|line| {
@@ -61,32 +61,30 @@ impl Day for AoC2023<1, &str> {
     }
 }
 
-const TEST_DATA_1: AoC2023<1, &str> = AoC2023::<1, &str> {
-    input: "1abc2
+#[test]
+fn test_part_one() {
+    const TEST_DATA_1: AoC2023<1, &str> = AoC2023::<1, &str> {
+        input: "1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
 treb7uchet",
-};
-
-#[test]
-fn test_part_one() {
+    };
     let result = TEST_DATA_1.part_one();
     println!("{:?}", result);
     assert_eq!(result, Some(String::from("142")));
 }
 
-const TEST_DATA_2: AoC2023<1, &str> = AoC2023::<1, &str> {
-    input: "two1nine
+#[test]
+fn test_part_two() {
+    const TEST_DATA_2: AoC2023<1, &str> = AoC2023::<1, &str> {
+        input: "two1nine
 eightwothree
 abcone2threexyz
 xtwone3four
 4nineeightseven2
 zoneight234
 7pqrstsixteen",
-};
-
-#[test]
-fn test_part_two() {
+    };
     let result = TEST_DATA_2.part_two();
     println!("{:?}", result);
     assert_eq!(result, Some(String::from("281")));

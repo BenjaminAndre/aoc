@@ -1,0 +1,43 @@
+use crate::aoc::*;
+
+impl Day for AoC2023<2, &str> {
+    fn default() -> Self {
+        Self {
+            input: include_str!("../data/input1.txt"),
+        }
+    }
+
+    fn part_one(&self) -> Option<String> {
+        self.input
+            .lines()
+            .map(|line| {
+                let words : Vec<_> = line.split(':').collect();
+                let id = words[0].last();
+            }) // get only game data
+            .map(|games| games.split(';'))
+            .map(|line| {
+                // must parse the string here
+                let (r, g, b) = (0, 0, 0);
+                line.split().map()
+            })
+            .sum()
+    }
+
+    fn part_two(&self) -> Option<String> {
+        None
+    }
+}
+
+#[test]
+fn test_part_one() {
+    const TEST_DATA_1: AoC2023<2, &str> = AoC2023::<2, &str> {
+        input: "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
+    };
+    let result = TEST_DATA_1.part_one();
+    println!("{:?}", result);
+    assert_eq!(result, Some(String::from("8")));
+}
