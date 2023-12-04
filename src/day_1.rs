@@ -1,3 +1,5 @@
+use crate::aoc::*;
+
 fn parse_str(text: &str) -> u32 {
     let mut sum = 0u32;
     for line in text.lines() {
@@ -31,8 +33,8 @@ impl Day for AoC2023<1, &str> {
     }
 
     fn part_two(&self) -> Option<String> {
-        let result = self
-            .input
+        let mut converted = self.input.to_string();
+        let result = converted
             .lines()
             .map(|line| {
                 let mut digit_iter = line.chars().enumerate().filter_map(|(index, character)| {
