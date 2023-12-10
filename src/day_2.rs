@@ -45,8 +45,8 @@ impl AoC2023<2, &str> {
     fn parse_day(&self) -> Option<Vec<Game>> {
         let mut games: Vec<Game> = vec![];
         for line in self.input.lines() {
-            let lineStr = line.to_string();
-            let (id_word, game_text) = lineStr.split_once(':').unwrap();
+            let line_str = line.to_string();
+            let (id_word, game_text) = line_str.split_once(':').unwrap();
             let mut game = Game::default();
             game.id = id_word.split_once(' ').unwrap().1.parse::<u32>().unwrap();
             game.r = 12;
