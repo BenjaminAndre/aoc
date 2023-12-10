@@ -2,11 +2,13 @@ mod aoc;
 mod day_1;
 mod day_2;
 mod day_3;
+mod day_4;
 
 pub use crate::aoc::*;
 pub use crate::day_1::*;
 pub use crate::day_2::*;
 pub use crate::day_3::*;
+pub use crate::day_4::*;
 
 fn main() {
     let d1 = AoC2023::<1, &str>::default();
@@ -18,4 +20,7 @@ fn main() {
     let d3 = AoC2023::<3, &str>::default();
     let r3 = d3.eval();
     println!("{:?}", r3);
+    let d4 = AoC2023::<4, &str>::default();
+    let r4 = d4.eval();
+    println!("{:?}", r4);
 }
